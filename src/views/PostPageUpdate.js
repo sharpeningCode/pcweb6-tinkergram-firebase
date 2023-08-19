@@ -30,7 +30,7 @@ export default function PostPageUpdate() {
         imageURL = await getDownloadURL( response.ref);
     }
 
-    await updateDoc(doc(db, "posts", id), { caption, image: imageURL });
+    await updateDoc(doc(db, "posts", id), { caption, image: imageURL, imageName: image.name }); // note 'object: key' notation
     navigate("/");
   }
 
